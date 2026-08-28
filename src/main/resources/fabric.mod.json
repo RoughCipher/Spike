@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "spike",
+	"version": "${version}",
+	"name": "Spike",
+	"description": "Spike Mod",
+	"authors": [
+		"Mod: RoughCipher"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": "",
+		"issues": ""
+	},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ru.roughcipher.spike.Spike"
+		]
+	},
+	"mixins": [
+		"spike.mixins.json"
+	],
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": "8.0.1",
+		"java": ">=${java}"
+	}
+}
