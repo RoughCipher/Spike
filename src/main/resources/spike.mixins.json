@@ -5,11 +5,14 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": [],
+  "mixins": [
+    "optimization.PacketBlockRegionUpdateFast"
+  ],
   "client": [],
   "server": [
     "server.PlayerManagerMixin",
     "server.fix.DefaultGamemode",
+    "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",
     "server.optimization.DisableSpawnAreaPrep",
     "server.optimization.DisableSpawnChunkKeepAlive",
