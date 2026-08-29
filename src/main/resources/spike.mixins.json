@@ -8,7 +8,9 @@
   "mixins": [
     "optimization.PacketBlockRegionUpdateFast"
   ],
-  "client": [],
+  "client": [
+    "client.fix.gui.TextFieldCursor"
+  ],
   "server": [
     "server.PlayerManagerMixin",
     "server.fix.DefaultGamemode",

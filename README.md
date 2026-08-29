@@ -12,4 +12,5 @@
 * Increased server lag warning timeout - flooding log.
 * Spawn chunks disabled.
 ## Client side
-* -
+* ### Fix:
+* Proper text cursor behavior (e.g., IPv6 input)
