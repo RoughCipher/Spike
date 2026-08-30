@@ -6,14 +6,18 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "optimization.PacketBlockRegionUpdateFast"
+    "core.optimization.PacketBlockRegionUpdateFast"
   ],
   "client": [
-    "client.fix.gui.TextFieldCursor"
+    "client.fix.gui.TextFieldCursor",
+    "client.fix.server.LanServerAddress",
+    "client.fix.server.LanServerFormat"
   ],
   "server": [
     "server.PlayerManagerMixin",
     "server.fix.DefaultGamemode",
+    "server.fix.PlayerListIpBan",
+    "server.fix.command.Ban",
     "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",
     "server.optimization.DisableSpawnAreaPrep",

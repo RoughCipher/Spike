@@ -1,4 +1,4 @@
-package ru.roughcipher.spike.mixin.optimization;
+package ru.roughcipher.spike.mixin.core.optimization;
 
 import net.minecraft.core.net.packet.PacketBlockRegionUpdate;
 import org.spongepowered.asm.mixin.Mixin;
