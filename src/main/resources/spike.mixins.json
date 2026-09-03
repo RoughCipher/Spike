@@ -6,6 +6,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "core.fix.worldgen.LeafDecayRadius",
     "core.optimization.PacketBlockRegionUpdateFast"
   ],
   "client": [
@@ -14,7 +15,7 @@
     "client.fix.server.LanServerFormat"
   ],
   "server": [
-    "server.PlayerManagerMixin",
+    "server.SafePlayerManagerTick",
     "server.fix.DefaultGamemode",
     "server.fix.PlayerListIpBan",
     "server.fix.command.Ban",

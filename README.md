@@ -1,6 +1,8 @@
 # Spike BTA 8.0.1
 
 ## Core
+* ### Fix:
+* Leaf decay radius 4 -> 7 fancytree foliage still finds logs after player chunk updates.
 * ### Features:
 * -
 * ### Optimizations:
@@ -11,7 +13,7 @@
 * ban ip / unban ip accept IPv6.
 * ip ban check on login correctly handles IPv6 (vanilla cut at first ':').
 * server.properties/default-gamemode.
-* Recursion protection disabled (clipped structures) - **Traveling in the Nether causes noticeable server freezes**.
+* Recursion protection disabled (clipped structures)
 * ### Optimizations:
 * Increased server lag warning timeout - flooding log.
 * Spawn chunks disabled.
