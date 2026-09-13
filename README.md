@@ -10,7 +10,7 @@
 * PacketBlockRegionUpdate fast compression.
 ## Server side
 * ### Fix:
-* fix unban username.
+* Fix unban username.
 * ban ip / unban ip accept IPv6.
 * ip ban check on login correctly handles IPv6 (vanilla cut at first ':').
 * server.properties/default-gamemode.
@@ -21,5 +21,7 @@
 * Spawn chunks disabled.
 ## Client side
 * ### Fix:
+* Fix subtitles for rubyglass-blocks.
+* Fix read server icons.
 * Proper text cursor behavior (e.g., IPv6 input).
 * LAN server list shows a clean host:port (IPv4-mapped / zone id).
