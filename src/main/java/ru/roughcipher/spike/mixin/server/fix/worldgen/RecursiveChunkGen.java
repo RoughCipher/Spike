@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayDeque;
-
+	//TODO: Переделать, слишком непредсказуемо.
 @Mixin(ChunkProviderServer.class)
 public abstract class RecursiveChunkGen {
 

@@ -2,6 +2,7 @@
 
 ## Core
 * ### Fix:
+* Languages from mods (any except en_US) are loaded again.
 * Leaf decay radius 4 -> 7 fancytree foliage still finds logs after player chunk updates.
 * ### Features:
 * -
@@ -13,6 +14,7 @@
 * ban ip / unban ip accept IPv6.
 * ip ban check on login correctly handles IPv6 (vanilla cut at first ':').
 * server.properties/default-gamemode.
+* New players can use creative inventory when default-gamemode is creative.
 * Recursion protection disabled (clipped structures)
 * ### Optimizations:
 * Increased server lag warning timeout - flooding log.

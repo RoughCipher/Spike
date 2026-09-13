@@ -8,9 +8,9 @@
 		"Mod: RoughCipher"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": "",
-		"issues": ""
+		"homepage": "https://github.com/RoughCipher",
+		"sources": "https://github.com/RoughCipher/Spike",
+		"issues": "https://github.com/RoughCipher/Spike/issues"
 	},
 	"license": "MIT",
 	"environment": "*",
