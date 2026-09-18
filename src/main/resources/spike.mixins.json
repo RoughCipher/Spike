@@ -5,6 +5,9 @@
   "injectors": {
     "defaultRequire": 1
   },
+  "mixinextras": {
+    "minVersion": "0.5.5"
+  },
   "mixins": [
     "core.fix.lang.LanguageModLangs",
     "core.fix.worldgen.LeafDecayRadius",
@@ -15,7 +18,8 @@
     "client.fix.server.LanServerAddress",
     "client.fix.server.LanServerFormat",
     "client.fix.sound.CrystalSubtitleFix",
-    "client.fix.net.PacketServerIconReadFully"
+    "client.fix.net.PacketServerIconReadFully",
+    "client.optimization.CameraFrustumCubeInFrustumFix"
   ],
   "server": [
     "server.SafePlayerManagerTick",

@@ -1,10 +1,11 @@
 package ru.roughcipher.spike.mixin.client.fix.server;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.client.gui.server.ServerListenerThread;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.net.InetAddress;
 import java.net.Inet6Address;
@@ -12,14 +13,14 @@ import java.net.Inet6Address;
 @Mixin(ServerListenerThread.class)
 public abstract class LanServerAddress {
 
-	@Redirect(
+	@WrapOperation(
 		method = "receivedLocalServer",
 		at = @At(
 			value = "INVOKE",
 			target = "Ljava/net/InetAddress;getHostAddress()Ljava/lang/String;"
 		)
 	)
-	private String spike$normalizeLanHost(InetAddress address) {
+	private String spike$normalizeLanHost(InetAddress address, Operation<String> original) {
 		return spike$cleanHost(address);
 	}
 

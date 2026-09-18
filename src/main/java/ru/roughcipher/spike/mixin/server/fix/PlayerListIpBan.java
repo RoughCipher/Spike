@@ -1,10 +1,11 @@
 package ru.roughcipher.spike.mixin.server.fix;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.server.net.PlayerList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -13,14 +14,14 @@ import java.net.SocketAddress;
 @Mixin(PlayerList.class)
 public abstract class PlayerListIpBan {
 
-	@Redirect(
+	@WrapOperation(
 		method = "getPlayerForLogin",
 		at = @At(
 			value = "INVOKE",
 			target = "Ljava/lang/Object;toString()Ljava/lang/String;"
 		)
 	)
-	private String spike$extractHostAddress(Object address) {
+	private String spike$extractHostAddress(Object address, Operation<String> original) {
 		if (address instanceof InetSocketAddress isa) {
 			InetAddress inet = isa.getAddress();
 			if (inet != null) {
@@ -39,10 +40,10 @@ public abstract class PlayerListIpBan {
 		if (address instanceof SocketAddress) {
 			return spike$parseHostFallback(address.toString()).toLowerCase();
 		}
-		return address.toString();
+		return original.call(address);
 	}
 
-	@Redirect(
+	@WrapOperation(
 		method = "getPlayerForLogin",
 		at = @At(
 			value = "INVOKE",
@@ -50,11 +51,11 @@ public abstract class PlayerListIpBan {
 			ordinal = 0
 		)
 	)
-	private int spike$skipSlashStrip(String self, String str) {
+	private int spike$skipSlashStrip(String self, String str, Operation<Integer> original) {
 		return -1;
 	}
 
-	@Redirect(
+	@WrapOperation(
 		method = "getPlayerForLogin",
 		at = @At(
 			value = "INVOKE",
@@ -62,7 +63,7 @@ public abstract class PlayerListIpBan {
 			ordinal = 1
 		)
 	)
-	private int spike$skipPortStrip(String self, String str) {
+	private int spike$skipPortStrip(String self, String str, Operation<Integer> original) {
 		return self.length();
 	}
 

@@ -28,6 +28,8 @@ lwjgl = "3.3.3"
 
 joml = "1.10.8" # Note: BTA uses 1.10.7, patch 8 removes the kotlin stdlib dependency
 jomlPrimitivess = "1.10.0"
+# https://github.com/LlamaLad7/MixinExtras/releases
+mixinExtras = "0.5.5"
 ##########################################################################
 
 [libraries]
@@ -43,6 +45,7 @@ lwjgl-glfw = { group = "org.lwjgl", name = "lwjgl-glfw", version.ref = "lwjgl"}
 lwjgl-openal = { group = "org.lwjgl", name = "lwjgl-openal", version.ref = "lwjgl"}
 lwjgl-opengl = { group = "org.lwjgl", name = "lwjgl-opengl", version.ref = "lwjgl"}
 lwjgl-stb = { group = "org.lwjgl", name = "lwjgl-stb", version.ref = "lwjgl"}
+mixinExtras = { group = "io.github.llamalad7", name = "mixinextras-fabric", version.ref = "mixinExtras" }
 
 [bundles]
 btaLwjgl = [ "lwjgl", "lwjgl-glfw", "lwjgl-openal", "lwjgl-opengl", "lwjgl-stb", "legacyLwjgl" ]

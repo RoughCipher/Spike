@@ -1,5 +1,7 @@
 package ru.roughcipher.spike.mixin.server.fix.worldgen;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.ProgressListener;
 import net.minecraft.core.world.chunk.ChunkLoader;
@@ -16,7 +18,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -59,7 +60,7 @@ public abstract class RecursiveChunkGen {
 		this.chunkLoadOverride = true;
 	}
 
-	@Redirect(
+	@WrapOperation(
 		method = "provideChunk",
 		at = @At(
 			value = "FIELD",
@@ -67,7 +68,7 @@ public abstract class RecursiveChunkGen {
 			opcode = Opcodes.GETFIELD
 		)
 	)
-	private boolean spike$allowTerrainDuringDecorate(ChunkProviderServer self) {
+	private boolean spike$allowTerrainDuringDecorate(ChunkProviderServer self, Operation<Boolean> original) {
 		return false;
 	}
 

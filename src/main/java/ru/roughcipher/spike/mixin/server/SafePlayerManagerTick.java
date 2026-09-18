@@ -1,10 +1,11 @@
 package ru.roughcipher.spike.mixin.server;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.server.player.PlayerManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -20,14 +21,14 @@ public abstract class SafePlayerManagerTick {
 	@Unique
 	private static final ArrayIt IT = new ArrayIt();
 
-	@Redirect(
+	@WrapOperation(
 		method = "tick",
 		at = @At(
 			value = "INVOKE",
 			target = "Ljava/util/List;iterator()Ljava/util/Iterator;"
 		)
 	)
-	private Iterator<?> spike$iterateSnapshot(List<?> list) {
+	private Iterator<?> spike$iterateSnapshot(List<?> list, Operation<Iterator<?>> original) {
 		int size = list.size();
 		if (size == 0) {
 			return Collections.emptyIterator();

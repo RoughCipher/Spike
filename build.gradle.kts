@@ -41,11 +41,18 @@ repositories {
         metadataSources { artifact() }
     }
 }
+@Suppress("GradleDuplicateDependency")
 dependencies {
     minecraft("::${libs.versions.bta.get()}")
 
 	// Required at compilation & runtime
 	implementation(libs.loader)
+
+	// MixinExtras
+	val mixinExtras = libs.mixinExtras
+	implementation(mixinExtras)
+	annotationProcessor(mixinExtras)
+	include(mixinExtras)
 
 	// Only required at compilation
 	compileOnly(libs.bundles.btaLwjgl)

@@ -1,5 +1,6 @@
 package ru.roughcipher.spike.mixin.server.fix;
 
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.net.PropertyManager;
 import net.minecraft.core.player.gamemode.Gamemode;
@@ -10,7 +11,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MinecraftServer.class)
@@ -22,17 +22,15 @@ public abstract class DefaultGamemode {
 	@Shadow
 	public Gamemode defaultGamemode;
 
-	@Redirect(
+	@WrapWithCondition(
 		method = "startServer",
 		at = @At(
 			value = "INVOKE",
 			target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;)V"
 		)
 	)
-	private void spike$suppressGamemodeWarn(Logger logger, String message) {
-		if (!message.contains("Unrecognised gamemode")) {
-			logger.warn(message);
-		}
+	private boolean spike$suppressGamemodeWarn(Logger logger, String message) {
+		return !message.contains("Unrecognised gamemode");
 	}
 
 	@Inject(
