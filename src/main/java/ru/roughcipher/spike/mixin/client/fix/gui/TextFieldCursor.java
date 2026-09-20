@@ -1,5 +1,7 @@
 package ru.roughcipher.spike.mixin.client.fix.gui;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.TextFieldElement;
 import net.minecraft.client.gui.text.TextFieldEditor;
@@ -8,9 +10,6 @@ import net.minecraft.core.util.helper.MathHelper;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TextFieldElement.class)
 public abstract class TextFieldCursor extends Gui {
@@ -28,10 +27,8 @@ public abstract class TextFieldCursor extends Gui {
 	@Shadow public boolean drawBackground;
 	@Shadow @Final private TextFieldEditor editor;
 
-	@Inject(method = "drawTextBox", at = @At("HEAD"), cancellable = true)
-	private void spike$drawTextBoxFixed(CallbackInfo ci) {
-		ci.cancel();
-
+	@WrapMethod(method = "drawTextBox")
+	private void spike$drawTextBoxFixed(Operation<Void> original) {
 		if (this.drawBackground) {
 			this.drawRect(
 				this.xPosition - 1,

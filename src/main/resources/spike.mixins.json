@@ -15,10 +15,10 @@
   ],
   "client": [
     "client.fix.gui.TextFieldCursor",
+    "client.fix.net.PacketServerIconReadFully",
     "client.fix.server.LanServerAddress",
     "client.fix.server.LanServerFormat",
     "client.fix.sound.CrystalSubtitleFix",
-    "client.fix.net.PacketServerIconReadFully",
     "client.optimization.CameraFrustumCubeInFrustumFix"
   ],
   "server": [
@@ -29,8 +29,9 @@
     "server.fix.command.Ban",
     "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",
+    "server.optimization.AsyncChunkGeneration",
+    "server.optimization.ChunkSendByDistance",
     "server.optimization.DisableSpawnAreaPrep",
-    "server.optimization.DisableSpawnChunkKeepAlive",
-    "server.optimization.MinuteKeepUpThreshold"
+    "server.optimization.DisableSpawnChunkKeepAlive"
   ]
 }

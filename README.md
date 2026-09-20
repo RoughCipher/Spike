@@ -5,7 +5,7 @@
 * MixinExtras 0.5.5
 * ### Fix:
 * Languages from mods (any except en_US) are loaded again.
-* Leaf decay radius 4 -> 7 fancytree foliage still finds logs after player chunk updates.
+* Leaf decay radius 4 -> 7 + BFS search, fancytree foliage still finds logs after player chunk updates.
 * ### Optimizations:
 * PacketBlockRegionUpdate fast compression.
 ## Server side
@@ -17,8 +17,9 @@
 * New players can use creative inventory when default-gamemode is creative.
 * Recursion protection disabled (clipped structures)
 * ### Optimizations:
-* Increased server lag warning timeout - flooding log.
 * Spawn chunks disabled.
+* Async terrain generation. Decorate stays on main thread.
+* Chunk send order better after teleports/login.
 ## Client side
 * ### Fix:
 * Fix subtitles for rubyglass-blocks.
