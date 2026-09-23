@@ -10,8 +10,12 @@
   },
   "mixins": [
     "core.fix.lang.LanguageModLangs",
+    "core.fix.weather.WeatherChunkLoadEffectSafe",
     "core.fix.worldgen.LeafDecayRadius",
-    "core.optimization.PacketBlockRegionUpdateFast"
+    "core.optimization.PacketBlockRegionUpdateFast",
+    "core.fix.SpectatorMuteSteps",
+    "core.fix.SpectatorMuteFall",
+    "core.fix.SpectatorNoBlockCollision"
   ],
   "client": [
     "client.fix.gui.TextFieldCursor",
@@ -19,6 +23,9 @@
     "client.fix.server.LanServerAddress",
     "client.fix.server.LanServerFormat",
     "client.fix.sound.CrystalSubtitleFix",
+    "client.fix.SpectatorInvisibility",
+    "client.fix.SpectatorRenderAlpha",
+    "client.fix.SpectatorPlayerShadow",
     "client.optimization.CameraFrustumCubeInFrustumFix"
   ],
   "server": [
@@ -26,6 +33,8 @@
     "server.fix.DefaultGamemode",
     "server.fix.PlayerListIpBan",
     "server.fix.PlayerServerCreativeInventory",
+    "server.fix.SpectatorHideFromTracker",
+    "server.fix.SpectatorGamemodeRefresh",
     "server.fix.command.Ban",
     "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",
