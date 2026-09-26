@@ -1,4 +1,4 @@
-package ru.roughcipher.spike.mixin.server.fix;
+package ru.roughcipher.spike.mixin.server.spectator;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;

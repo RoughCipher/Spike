@@ -1,4 +1,4 @@
-package ru.roughcipher.spike.mixin.client.fix;
+package ru.roughcipher.spike.mixin.client.spectator;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.Minecraft;

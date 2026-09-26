@@ -1,4 +1,4 @@
-package ru.roughcipher.spike.mixin.server.fix;
+package ru.roughcipher.spike.mixin.server.spectator;
 
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.player.gamemode.Gamemode;
