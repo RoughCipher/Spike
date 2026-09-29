@@ -29,7 +29,10 @@
     "client.spectator.SpectatorInvisibility",
     "client.spectator.SpectatorPlayerShadow",
     "client.spectator.SpectatorRenderAlpha",
-    "client.fix.lang.I18nPreferSelectedPack"
+    "client.fix.lang.I18nPreferSelectedPack",
+    "client.fix.window.LowerOpenGLVersionRequirement",
+    "client.fix.window.ShaderVersionDowngradeInternal",
+    "client.fix.window.ShaderVersionDowngradeExternal"
   ],
   "server": [
     "server.SafePlayerManagerTick",

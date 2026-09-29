@@ -10,13 +10,17 @@
 	"contact": {
 		"homepage": "https://github.com/RoughCipher",
 		"sources": "https://github.com/RoughCipher/Spike",
-		"issues": "https://github.com/RoughCipher/Spike/issues"
+		"issues": "https://github.com/RoughCipher/Spike/issues",
+		"telegram": "https://t.me/RoughCipher"
 	},
 	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"ru.roughcipher.spike.Spike"
+		],
+		"preLaunch": [
+			"ru.roughcipher.spike.SpikePreLaunch"
 		]
 	},
 	"mixins": [

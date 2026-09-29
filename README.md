@@ -25,6 +25,7 @@
 * Chunk send order better after teleports/login.
 ## Client side
 * ### Features:
+* Lower minimum OpenGL 4.1 -> 3.3 (old GPU support).
 * Spectator players are invisible to non-spectators other spectators see them translucent.
 * ### Fix:
 * Language pack GUI: when several packs share the same id, only the selected one is highlighted and loaded (selection stored in options.txt as languagePackKey).
