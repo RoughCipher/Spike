@@ -19,6 +19,7 @@
 * server.properties/default-gamemode.
 * New players can use creative inventory when default-gamemode is creative.
 * Recursion protection disabled (clipped structures).
+* world-type: Nether now receives the matching world type (e.g. skyblock/beta_173).
 * ### Optimizations:
 * Spawn chunks disabled.
 * Async terrain generation. Decorate stays on main thread.

@@ -42,6 +42,7 @@
     "server.fix.command.Ban",
     "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",
+    "server.fix.worldgen.FixWorldTypeGroupSelection",
     "server.optimization.AsyncChunkGeneration",
     "server.optimization.ChunkSendByDistance",
     "server.optimization.DisableSpawnAreaPrep",
