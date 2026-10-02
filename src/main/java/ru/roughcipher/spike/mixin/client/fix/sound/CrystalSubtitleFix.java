@@ -7,6 +7,7 @@ import net.minecraft.client.sound.NamedSoundRepository;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
+//TODO: Удалить при обновлении.
 @Mixin(NamedSoundRepository.class)
 public abstract class CrystalSubtitleFix {
 

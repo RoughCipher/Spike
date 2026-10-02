@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+//TODO: Удалить при обновлении.
 @Mixin(MinecraftServer.class)
 public abstract class DefaultGamemode {
 

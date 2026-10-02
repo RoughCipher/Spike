@@ -39,6 +39,8 @@
     "server.fix.DefaultGamemode",
     "server.fix.PlayerListIpBan",
     "server.fix.PlayerServerCreativeInventory",
+    "server.fix.FixPlayerSpawnPlacement",
+    "server.fix.command.FixCommandSpawnPlacement",
     "server.fix.command.Ban",
     "server.fix.command.Unban",
     "server.fix.worldgen.RecursiveChunkGen",

@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Mixin(CommandUnban.class)
 public abstract class Unban {
-
+	//TODO: Удалить при обновлении.
 	@WrapOperation(
 		method = "lambda$register$2",
 		at = @At(

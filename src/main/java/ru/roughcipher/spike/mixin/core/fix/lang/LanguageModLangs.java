@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.zip.ZipFile;
 
+//TODO: Удалить при обновлении.
 @Mixin(Language.class)
 public abstract class LanguageModLangs {
 
