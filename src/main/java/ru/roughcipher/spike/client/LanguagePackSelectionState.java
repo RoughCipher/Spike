@@ -24,16 +24,26 @@ public final class LanguagePackSelectionState {
 		if (lang == null) {
 			return "";
 		}
-		String credits = "";
+		return escape(nullToEmpty(lang.getId()))
+			+ SEP + escape(nullToEmpty(lang.getName()))
+			+ SEP + escape(nullToEmpty(lang.getRegion()))
+			+ SEP + escape(creditsPart(lang));
+	}
+
+	private static String creditsPart(Language lang) {
 		List<String> creditList = lang.getCredits();
-		if (creditList != null && !creditList.isEmpty()) {
-			credits = creditList.stream()
-				.filter(Objects::nonNull)
-				.collect(Collectors.joining(","));
+		if (creditList == null || creditList.isEmpty()) {
+			return "";
 		}
-		return escape(Objects.toString(lang.getName(), ""))
-			+ SEP + escape(Objects.toString(lang.getRegion(), ""))
-			+ SEP + escape(credits);
+		return creditList.stream()
+			.filter(Objects::nonNull)
+			.map(String::trim)
+			.filter(s -> !s.isEmpty())
+			.collect(Collectors.joining(","));
+	}
+
+	private static String nullToEmpty(@Nullable String s) {
+		return s == null ? "" : s;
 	}
 
 	private static String escape(String s) {
@@ -53,22 +63,17 @@ public final class LanguagePackSelectionState {
 		if (pack == null || currentLanguageId == null || !currentLanguageId.equals(pack.getId())) {
 			return false;
 		}
-		String packKey = makeKey(pack);
-		String key = getStoredKey();
-		if (key == null) {
-			LANGUAGE_PACK_KEY.set(packKey);
-			return true;
-		}
-		return key.equals(packKey);
+		return matchesSelected(pack);
 	}
 
 	public static void setSelected(Language pack) {
-		if (pack != null) {
-			LANGUAGE_PACK_KEY.set(makeKey(pack));
-			try {
-				GameSettings.saveOptions();
-			} catch (Exception ignored) {
-			}
+		if (pack == null) {
+			return;
+		}
+		LANGUAGE_PACK_KEY.set(makeKey(pack));
+		try {
+			GameSettings.saveOptions();
+		} catch (Exception ignored) {
 		}
 	}
 
@@ -81,11 +86,12 @@ public final class LanguagePackSelectionState {
 	}
 
 	public static Language resolve(@Nullable String id) throws Exception {
-		if (id == null || "en_US".equals(id)) {
-			return LanguageSeeker.seek(id == null ? "en_US" : id);
+		if (id == null) {
+			id = "en_US";
 		}
 		List<Language> available = LanguageSeeker.getAvailableLanguages();
 		Language firstMatch = null;
+		Language keyMatch = null;
 		for (Language lang : available) {
 			if (!id.equals(lang.getId())) {
 				continue;
@@ -94,8 +100,12 @@ public final class LanguagePackSelectionState {
 				firstMatch = lang;
 			}
 			if (matchesSelected(lang)) {
-				return lang;
+				keyMatch = lang;
+				break;
 			}
+		}
+		if (keyMatch != null) {
+			return keyMatch;
 		}
 		if (firstMatch != null) {
 			if (getStoredKey() == null) {
