@@ -9,6 +9,9 @@
     "minVersion": "0.5.5"
   },
   "mixins": [
+    "core.fix.EntityChunkLoadCollisionFix",
+    "core.fix.MobContinuousBlockSeparation",
+    "core.fix.MobChunkLoadWallImmunity",
     "core.fix.SpectatorMuteFall",
     "core.fix.SpectatorMuteSteps",
     "core.fix.SpectatorNoBlockCollision",
