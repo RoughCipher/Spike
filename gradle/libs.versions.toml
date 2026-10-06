@@ -2,7 +2,7 @@
 ##########################################################################
 # Plugins
 # Check this on https://github.com/FabricMC/fabric-loom/releases/latest/
-loom = "1.15-SNAPSHOT"
+loom = "1.17-SNAPSHOT"
 ##########################################################################
 # Java Configuration
 # The Java version the JDK will be for compiling and running code.

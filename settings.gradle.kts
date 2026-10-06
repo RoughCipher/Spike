@@ -41,12 +41,14 @@ pluginManagement {
 		maven(
 			repoUrlWithFallbacks(
 				listOf(
-					"https://maven.fabricmc.net",
-					"https://maven2.fabricmc.net",
-					"https://maven3.fabricmc.net"
+					"https://maven.fabricmc.net/",
+					"https://maven2.fabricmc.net/",
+					"https://maven3.fabricmc.net/"
 				)
 			)
-		) { name = "Fabric" }
+		) {
+			name = "Fabric"
+		}
 	}
 	val foojayResolverVersion = providers.gradleProperty("foojay_resolver_version")
 	plugins {

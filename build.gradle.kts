@@ -1,6 +1,7 @@
 plugins {
 	alias(libs.plugins.loom)
-    java
+	java
+	id("io.github.nerdthened.jartighten") version "1.2.12"
 }
 
 val lwjglNatives = resolveLwjglNatives()
@@ -20,15 +21,17 @@ loom {
     customMinecraftMetadata.set("https://downloads.betterthanadventure.net/bta-client/${btaChannel}/$btaVersion/manifest.json")
 }
 repositories {
-    mavenCentral()
-    maven("https://maven.fabricmc.net/") { name = "Fabric" }
-    ivy("https://github.com/Turnip-Labs/fabric-loader/releases/download/") {
-        name = "FabricLoader"
-        patternLayout {
-            artifact("[revision]/[module]-[revision](-[classifier])(.[ext])")
-        }
-        metadataSources { artifact() }
-    }
+	mavenCentral()
+	maven("https://maven.fabricmc.net/") {
+		name = "Fabric"
+	}
+	ivy("https://github.com/Turnip-Labs/fabric-loader/releases/download/") {
+		name = "FabricLoader"
+		patternLayout {
+			artifact("[revision]/[module]-[revision](-[classifier])(.[ext])")
+		}
+		metadataSources { artifact() }
+	}
 	ivy("https://github.com/Better-than-Adventure") {
 		name = "LegacyLwjgl"
 		patternLayout {
@@ -36,10 +39,12 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
-    ivy("https://piston-data.mojang.com") {
-        patternLayout { artifact("v1/[organisation]/[revision]/[module].jar") }
-        metadataSources { artifact() }
-    }
+	ivy("https://piston-data.mojang.com") {
+		patternLayout {
+			artifact("v1/[organisation]/[revision]/[module].jar")
+		}
+		metadataSources { artifact() }
+	}
 }
 @Suppress("GradleDuplicateDependency")
 dependencies {
@@ -165,4 +170,54 @@ fun resolveLwjglNatives(): String {
 				throw Error("Unrecognized or unsupported platform. Please set \"lwjglNatives\" manually")
 		}
 	}
+}
+
+//	gradlew jartighten
+val jarTask = tasks.named<Jar>("jar")
+
+tasks.named<io.github.NeRdTheNed.JarTighten.JarTightenTask>("jartighten") {
+	group = "build"
+	description = "Max JAR compression"
+	dependsOn(jarTask)
+	mustRunAfter(jarTask)
+
+	inputFile.set(jarTask.flatMap { it.archiveFile })
+	outputFile.set(
+		layout.buildDirectory.file(
+			jarTask.flatMap { jar ->
+				jar.archiveFileName.map { name ->
+					val base = name.removeSuffix(".jar")
+					"libs/${base}-tightened.jar"
+				}
+			}
+		)
+	)
+
+	removeTimestamps.set(true)
+	removeComments.set(true)
+	removeExtra.set(true)
+	removeDirectoryEntries.set(true)
+	deduplicateEntries.set(true)
+	sortEntries.set(true)
+	recursiveStore.set(true)
+
+	recompressZopfli.set(true)
+	recompressZopfliPasses.set(100)
+	recompressJZopfli.set(true)
+	recompressJZlib.set(true)
+	recompressStandard.set(true)
+	recompressStore.set(true)
+	recompressMultithread.set(true)
+	mode.set("EXTENSIVE")
+
+	optimiseDeflateStreamExisting.set(true)
+	optimiseDeflateStreamRecompress.set(true)
+	compareDeflateStreamBits.set(true)
+	mergeBlocks.set(true)
+	// break Fabric loader, unzip, nested jars.
+	// removeFileNames.set(true)
+	// removeFileLength.set(true)
+	// removeDirEntryLength.set(true)
+	// zeroLocalFileHeaders.set(true)
+	// removeEOCDInfo.set(true)
 }
