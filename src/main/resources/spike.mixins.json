@@ -15,6 +15,7 @@
     "core.fix.SpectatorMuteFall",
     "core.fix.SpectatorMuteSteps",
     "core.fix.SpectatorNoBlockCollision",
+    "core.fix.command.CommandSuggestionsCursorSafe",
     "core.fix.lang.LanguageModLangs",
     "core.fix.weather.WeatherChunkLoadEffectSafe",
     "core.fix.worldgen.LeafDecayRadius",
@@ -22,6 +23,7 @@
   ],
   "client": [
     "client.fix.auth.AccessTokenLaunchArg",
+    "client.fix.gui.ChatSuggestionsCursorSafe",
     "client.fix.gui.LanguagePackComponentDuplicateIdFix",
     "client.fix.gui.LanguagePackListDuplicateIdFix",
     "client.fix.gui.TextFieldCursor",
