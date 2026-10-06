@@ -30,6 +30,7 @@
 * ### Features:
 * Lower minimum OpenGL 4.1 -> 3.3 (old GPU support).
 * Spectator players are invisible to non-spectators other spectators see them translucent.
+* Support launch argument `--accessToken` (alias for `--session`).
 * ### Fix:
 * Language pack GUI: when several packs share the same id, only the selected one is highlighted and loaded (selection stored in options.txt as languagePackKey).
 * Fix subtitles for rubyglass-blocks.

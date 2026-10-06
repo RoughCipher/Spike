@@ -21,6 +21,7 @@
     "core.optimization.PacketBlockRegionUpdateFast"
   ],
   "client": [
+    "client.fix.auth.AccessTokenLaunchArg",
     "client.fix.gui.LanguagePackComponentDuplicateIdFix",
     "client.fix.gui.LanguagePackListDuplicateIdFix",
     "client.fix.gui.TextFieldCursor",
