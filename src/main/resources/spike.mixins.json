@@ -32,6 +32,8 @@
     "client.fix.server.LanServerFormat",
     "client.fix.sound.CrystalSubtitleFix",
     "client.optimization.CameraFrustumCubeInFrustumFix",
+    "client.optimization.LimitNearChunkRebuilds",
+    "client.optimization.ChunkBlocksUpdateBatch",
     "client.spectator.SpectatorInvisibility",
     "client.spectator.SpectatorPlayerShadow",
     "client.spectator.SpectatorRenderAlpha",

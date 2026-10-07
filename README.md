@@ -10,7 +10,7 @@
 * MC-2025.
 * Chat command: moving the cursor no longer crashes or kicks the player.
 * ### Optimizations:
-* PacketBlockRegionUpdate fast compression + pooled Deflater/Inflater.
+* PacketBlockRegionUpdate: fast compression + pooled Deflater/Inflater.
 ## Server side
 * ### Features:
 * Spectator players are not sent to non-spectators. Works even for clients without Spike.
@@ -39,3 +39,6 @@
 * Proper text cursor behavior (e.g., IPv6 input).
 * LAN server list shows a clean host:port (IPv4-mapped / zone id).
 * CameraFrustum.cubeInFrustum now respects FRUSTUM_CULLING option.
+* ### Optimizations:
+* Cap nearchunk rebuilds perframe.
+* PacketChunkBlocksUpdate: raw setBlock + single markBlocksDirty.
