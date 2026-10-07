@@ -10,7 +10,7 @@
 * MC-2025.
 * Chat command: moving the cursor no longer crashes or kicks the player.
 * ### Optimizations:
-* PacketBlockRegionUpdate fast compression.
+* PacketBlockRegionUpdate fast compression + pooled Deflater/Inflater.
 ## Server side
 * ### Features:
 * Spectator players are not sent to non-spectators. Works even for clients without Spike.
