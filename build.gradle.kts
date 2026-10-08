@@ -202,7 +202,7 @@ tasks.named<io.github.NeRdTheNed.JarTighten.JarTightenTask>("jartighten") {
 	recursiveStore.set(true)
 
 	recompressZopfli.set(true)
-	recompressZopfliPasses.set(100)
+	recompressZopfliPasses.set(1000)
 	recompressJZopfli.set(true)
 	recompressJZlib.set(true)
 	recompressStandard.set(true)

@@ -7,7 +7,6 @@
 * Languages from mods (any except en_US) are loaded again.
 * Leaf decay radius 4 → 7 + BFS search, fancytree foliage still finds logs after player chunk updates.
 * WeatherChunkLoad (StackOverflowError).
-* MC-2025.
 * Chat command: moving the cursor no longer crashes or kicks the player.
 * ### Optimizations:
 * PacketBlockRegionUpdate: fast compression + pooled Deflater/Inflater.
