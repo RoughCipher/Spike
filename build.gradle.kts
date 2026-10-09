@@ -32,6 +32,14 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	val halplibeTag = "v${libs.versions.halplibe.get().substringBefore('+')}"
+	ivy("https://github.com/Turnip-Labs/bta-halplibe/releases/download/") {
+		name = "Halplibe"
+		patternLayout {
+			artifact("$halplibeTag/[module]-[revision](-[classifier])(.[ext])")
+		}
+		metadataSources { artifact() }
+	}
 	ivy("https://github.com/Better-than-Adventure") {
 		name = "LegacyLwjgl"
 		patternLayout {
@@ -52,6 +60,7 @@ dependencies {
 
 	// Required at compilation & runtime
 	implementation(libs.loader)
+	implementation(libs.halplibe)
 
 	// MixinExtras
 	val mixinExtras = libs.mixinExtras
@@ -125,6 +134,7 @@ tasks {
 		val resourceMap = mapOf(
 			"version" to modVersion,
 			"fabricloader" to libs.versions.loader.get(),
+			"halplibe" to libs.versions.halplibe.get(),
 			"java" to libs.versions.java.get()
 		)
 		inputs.properties(resourceMap)

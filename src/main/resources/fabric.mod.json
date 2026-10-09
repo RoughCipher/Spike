@@ -26,6 +26,7 @@
 	"depends": {
 		"fabricloader": "*",
 		"minecraft": "8.0.1",
-		"java": ">=${java}"
+		"java": ">=${java}",
+		"halplibe": "*"
 	}
 }

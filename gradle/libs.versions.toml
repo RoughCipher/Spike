@@ -15,10 +15,12 @@ gradleJava = "21"
 bta = "8.0.1"
 # Options are release, prerelease, nightly, and misc.
 btaChannel = "release"
-# Check this on https://github.com/Turnip-Labs/fabric-loader/releases
-loader = "0.18.4-bta.11"
 # Check this on https://github.com/Better-than-Adventure/legacy-lwjgl3/releases/latest/
 legacyLwjgl = "1.0.6"
+# Check this on https://github.com/Turnip-Labs/fabric-loader/releases
+loader = "0.18.4-bta.11"
+# Check this on https://github.com/Turnip-Labs/bta-halplibe/releases/latest/
+halplibe = "6.2.0+8.0.1"
 ##########################################################################
 # Dependencies
 # Check this on https://central.sonatype.com/artifact/org.slf4j/slf4j-api/
@@ -34,6 +36,7 @@ mixinExtras = "0.5.5"
 
 [libraries]
 loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "loader" }
+halplibe = { group = "turniplabs", name = "halplibe", version.ref = "halplibe" }
 legacyLwjgl = { group = "legacy-lwjgl3", name = "legacy-lwjgl3", version.ref = "legacyLwjgl" }
 slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4jApi" }
 # https://piston-data.mojang.com/v1/objects/43db9b498cb67058d2e12d394e6507722e71bb45/client.jar
