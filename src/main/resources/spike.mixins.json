@@ -52,8 +52,8 @@
     "server.fix.worldgen.FixWorldTypeGroupSelection",
     "server.optimization.AsyncChunkGeneration",
     "server.optimization.ChunkSendByDistance",
-    "server.optimization.DisableSpawnAreaPrep",
-    "server.optimization.DisableSpawnChunkKeepAlive",
+    "server.spawnchunks.SpawnAreaPrep",
+    "server.spawnchunks.SpawnChunkKeepAlive",
     "server.spectator.SpectatorGamemodeRefresh",
     "server.spectator.SpectatorHideFromTracker"
   ]

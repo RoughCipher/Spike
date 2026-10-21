@@ -23,7 +23,8 @@
 * world-type: Nether now receives the matching world type (e.g. skyblock/beta_173).
 * Player spawn.
 * ### Optimizations:
-* Spawn chunks disabled.
+* Spawn chunks configurable (default false).
+  When enabled: only overworld spawn area is prepared and kept loaded.
 * Async terrain generation. Decorate stays on main thread.
 * Chunk send order better after teleports/login.
 ## Client side
