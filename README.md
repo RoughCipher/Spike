@@ -4,6 +4,7 @@
 * ### Features:
 * MixinExtras 0.5.5
 * ### Fix:
+* Cocoa beans are growing again and harvest when fully grown.
 * Languages from mods (any except en_US) are loaded again.
 * Leaf decay radius 4 → 7 + BFS search, fancytree foliage still finds logs after player chunk updates.
 * WeatherChunkLoad (StackOverflowError).

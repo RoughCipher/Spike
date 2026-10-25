@@ -12,6 +12,7 @@
     "core.fix.SpectatorMuteFall",
     "core.fix.SpectatorMuteSteps",
     "core.fix.SpectatorNoBlockCollision",
+    "core.fix.block.CacaoLeavesGrowthFix",
     "core.fix.command.CommandSuggestionsCursorSafe",
     "core.fix.lang.LanguageModLangs",
     "core.fix.weather.WeatherChunkLoadEffectSafe",
