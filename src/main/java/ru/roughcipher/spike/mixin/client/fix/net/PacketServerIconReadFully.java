@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import java.io.DataInputStream;
 import java.io.IOException;
-
+//TODO: Удалить при обновлении.
 @Mixin(PacketServerIcon.class)
 public abstract class PacketServerIconReadFully {
 
