@@ -18,6 +18,7 @@ Fix:
 
 Optimizations:
 - PacketBlockRegionUpdate: fast compression + pooled Deflater/Inflater.
+- Shared Random for all entities.
 - Next-tick list.
 
 Server side

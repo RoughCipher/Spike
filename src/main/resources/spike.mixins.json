@@ -18,7 +18,8 @@
     "core.fix.weather.WeatherChunkLoadEffectSafe",
     "core.fix.worldgen.LeafDecayRadius",
     "core.optimization.OptimizeNextTickList",
-    "core.optimization.PacketBlockRegionUpdateFast"
+    "core.optimization.PacketBlockRegionUpdateFast",
+    "core.optimization.SharedEntityRandom"
   ],
   "client": [
     "client.fix.auth.AccessTokenLaunchArg",
