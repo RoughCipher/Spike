@@ -18,6 +18,7 @@ Fix:
 
 Optimizations:
 - PacketBlockRegionUpdate: fast compression + pooled Deflater/Inflater.
+- Next-tick list.
 
 Server side
 Features:
