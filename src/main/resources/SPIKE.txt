@@ -7,6 +7,8 @@ Requirements:
 
 All
 Features:
+- Simulation-distance configurable (default 8, range 2-16).
+  Controls random ticks, weather/cave updates and mob-spawn eligible chunks around players.
 - MixinExtras 0.5.5
 
 Fix:

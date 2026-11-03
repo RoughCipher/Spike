@@ -19,7 +19,9 @@
     "core.fix.worldgen.LeafDecayRadius",
     "core.optimization.OptimizeNextTickList",
     "core.optimization.PacketBlockRegionUpdateFast",
-    "core.optimization.SharedEntityRandom"
+    "core.optimization.SharedEntityRandom",
+    "core.simulationdistance.SimulationDistanceBlocks",
+    "core.simulationdistance.SimulationDistanceSpawning"
   ],
   "client": [
     "client.fix.auth.AccessTokenLaunchArg",
