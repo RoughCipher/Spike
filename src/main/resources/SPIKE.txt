@@ -60,3 +60,4 @@ Fix:
 Optimizations:
 - Cap nearchunk rebuilds perframe.
 - PacketChunkBlocksUpdate: raw setBlock + single markBlocksDirty.
+- OpenGL vertex buffers: 4-byte alignment and DYNAMIC_DRAW where buffers are updated frequently (improves performance on drivers that require strict alignment e.g. AMD Adrenaline <22.6.1).
